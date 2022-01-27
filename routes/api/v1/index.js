@@ -12,6 +12,8 @@ router.post("/getroombyid", roomController.getroombyid);
 router.post("/signup", userController.signup);
 router.post("/login", userController.signin);
 router.post("/bookings/bookroom", bookingController.bookingDetails);
+router.post("/getbookingbyuserid", bookingController.getbookingbyuserid);
+router.post("/cancelbooking", bookingController.cancelbooking);
 
 // router.post("/getallrooms", async(req, res) => {
 
