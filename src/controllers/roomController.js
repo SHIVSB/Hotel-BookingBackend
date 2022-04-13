@@ -49,5 +49,16 @@ roomController.getroombyid = async(req, res) => {
     }
 }
 
+roomController.addroom = async(req, res) => {
+    try{
+        const newroom = new Room(req.body);
+
+        await newroom.save();
+        return res.status(200).send("New room added successfully");
+    }catch(error){
+        return res.status(500).send("Error in adding the room");
+    }
+}
+
 
 module.exports = roomController;

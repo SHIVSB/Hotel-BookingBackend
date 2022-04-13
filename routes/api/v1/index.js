@@ -5,7 +5,7 @@ var router = express.Router();
 const userController = require("../../../src/controllers/userController.js");
 const roomController = require("../../../src/controllers/roomController.js");
 const bookingController = require("../../../src/controllers/bookingController.js");
-
+const authController = require("../../../src/utils/authentication.js");
 
 router.post("/getallrooms", roomController.getallrooms);
 router.post("/getroombyid", roomController.getroombyid);
@@ -14,7 +14,9 @@ router.post("/login", userController.signin);
 router.post("/bookings/bookroom", bookingController.bookingDetails);
 router.post("/getbookingbyuserid", bookingController.getbookingbyuserid);
 router.post("/cancelbooking", bookingController.cancelbooking);
-
+router.post("/allbookings",bookingController.allbookings);
+router.post("/getallusers", userController.getallusers);
+router.post("/addroom",roomController.addroom);
 // router.post("/getallrooms", async(req, res) => {
 
 //     try{
